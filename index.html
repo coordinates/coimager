@@ -1,0 +1,19 @@
+<html>
+<body>
+<img src="sfsafariview-normal.png" />
+
+<script type="text/javascript">
+window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+
+window.requestFileSystem(window.TEMPORARY, 5*1024*1024 /*5MB*/, onInitFs, errorHandler);
+
+function onInitFs(fs) {
+  console.log('Opened file system: ' + fs.name);
+}
+
+function errorHandler(e) {
+  console.log(e.name + ": " + e.message);
+}
+</script>
+</body>
+</html>
